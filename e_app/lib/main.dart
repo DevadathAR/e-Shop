@@ -1,10 +1,9 @@
-import 'package:e_app/Veiw/Home.dart';
+import 'package:e_app/Veiw/signUpScreen.dart';
 import 'package:e_app/state/currentUser.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
-import 'package:e_app/Veiw/loginScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +22,7 @@ class MainApp extends StatelessWidget {
       create: ( context)=>CurrentUser(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: SignUpScreen(),
       ),
     );
   }
