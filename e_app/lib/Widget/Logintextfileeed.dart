@@ -15,7 +15,8 @@ Widget LogInTextForm(BuildContext context,
         decoration: InputDecoration(
             hintText: hint,
             labelText: labels,
-            border: const OutlineInputBorder(borderSide: BorderSide.none)),
+            border: const OutlineInputBorder(borderSide: BorderSide.none),
+            ),
       ),
     ),
   );
