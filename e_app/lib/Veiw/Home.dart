@@ -65,13 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
           itemCount: products.length,
           itemBuilder: (context, index) {
             final product = products[index];
-            final pic = product['images'].toString().replaceAll('[', '').replaceAll(']', '');
+            // final pic = product['images'].toString().replaceAll('[', '').replaceAll(']', '');
+            final pic = product['images'][0];
             print(pic);
             final title = product['title'];
             final desc = product['description'];
             final price = product['price'];
             final discount = product['discountPercentage'];
-            
 
             return Container(
               color: const Color.fromARGB(255, 255, 255, 255),
@@ -81,8 +81,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: 10,
                   ),
-
-                  Expanded(child: Image(image: NetworkImage(pic),fit: BoxFit.cover,)),
+                  Expanded(
+                      child: Image(
+                    image: NetworkImage(pic),
+                    fit: BoxFit.cover,
+                  )),
                   Text(
                     title,
                     style: const TextStyle(
@@ -127,10 +130,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color.fromARGB(255, 37, 208, 43),
                         ),
                       ),
-                    
                     ],
                   ),
-                  SizedBox(height: 5,)
+                  const SizedBox(
+                    height: 5,
+                  )
                 ],
               ),
             );
